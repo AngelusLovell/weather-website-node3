@@ -1,9 +1,4 @@
 		
-		console.log('Client side javascript!');
-		
-		
-		
-		
 		const weatherForm = document.querySelector('form');
 		const search = document.querySelector('form input');
 		const forecastLocation = document.querySelector('#forecastLocation');
