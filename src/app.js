@@ -57,13 +57,14 @@
 						return res.send({ error });
 					}
 					
-					forecast({longitude, latitude}, (error, { temperature, feelslike } = {}) => {
+					forecast({longitude, latitude}, (error, { weatherState, temperature, feelslike, humidity } = {}) => {
 						if(error) {
 							return res.send({ error });
 						}
 							
-						const forecast = 'It is currently ' + temperature + 
-						' degrees fehranheit.' + ' It feels like ' + feelslike + ' degrees out.';
+						const forecast = weatherState + ': It is currently ' + temperature + 
+						' degrees fehranheit.' + ' It feels like ' + feelslike 
+						+ ' degrees out. Humidity is around ' + humidity + '%.';
 						res.send({
 							forecast,
 							location,

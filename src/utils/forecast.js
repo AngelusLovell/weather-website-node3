@@ -12,8 +12,10 @@
 						callback('Unable to find location!', undefined);
 					} else {
 						const data = {
+							weatherState : body.current.weather_descriptions[0],
 							temperature : body.current.temperature,
-							feelslike : body.current.feelslike
+							feelslike : body.current.feelslike,
+							humidity : body.current.humidity
 						}
 						callback(undefined, data);
 					}
